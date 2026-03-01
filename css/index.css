@@ -1,0 +1,404 @@
+:root {
+  --color-principal: #51a6db;
+  --color-secundario:#4ea0ee;
+  --blue: #4b93c0;
+  --green: #139158;
+  --dark: #0f1720;
+  --accent: #f7a92d;
+  --maxw: 1200px;
+}
+
+a,
+a:visited
+{
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Montserrat, system-ui, Arial, Helvetica, sans-serif;
+  color: var(--dark);
+  background: #fff;
+}
+
+.top-line {
+  height: auto;
+  background: var(--blue);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.top-line p{
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 450;
+}
+
+.top-line span{
+  margin: 0;
+  padding: 0;
+  font-size: 0.8rem;
+  font-weight: 450;
+}
+
+.icon.top{
+  display: flex;
+  margin: 0;
+  padding: 0;
+  height: 1.2rem;
+  justify-content: center;
+  align-items: center;
+}
+
+.topGroup{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.topGroup div{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 0.2rem;
+}
+
+.top-line img{
+  height: 1rem;
+}
+
+header.main-header {
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background: var(--color-principal);
+  backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.04);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.25);
+}
+
+.nav-row {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background-color: var(--color-principal);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+}
+
+
+
+.logo img {
+  height: 3.2rem;
+  width: 2.2rem;
+  border-radius: 1rem;
+}
+
+.name-frase-company{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0;
+}
+
+.frase-company{
+  margin: 0;
+  color: black;
+  padding: 0;
+}
+
+nav.menu {
+  display: flex;
+  gap: 2.3rem;
+  align-items: center;
+}
+
+.name-company{
+    font-size: 2rem;
+    color: black;
+}
+
+nav.menu a {
+  font-size: 15px;
+  text-decoration: none;
+  color:white;
+  letter-spacing: 0.6px;
+  height: 100%;
+
+}
+
+nav.menu a.enVentana{
+  transform: scale(1.1,1.1);
+  border-bottom: 1px solid var(--dark);
+  color: var(--dark);
+}
+
+nav.menu a:hover{
+  transform: scale(1.1,1.1);
+  border-bottom: 1px solid var(--dark);
+  color: var(--dark);
+  transition: 0.07s ease;
+  
+}
+
+.actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
+
+.actions a {
+  font-size: 14px;
+  color: var(--blue);
+  text-decoration: none;
+}
+
+#contacto{
+  background-color: white;
+  color: var(--dark);
+  border-radius: 0.8rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  padding: 1rem;
+  font-weight: 700;
+  transition:  0.3s ease;
+}
+
+#contacto.dentro{
+
+  transform: scale(1,1);
+  color: white;
+  background-color: var(--dark);
+  border-bottom: none;
+
+}
+
+#contacto:hover{
+  transform: scale(1,1);
+  color: white;
+  background-color: var(--dark);
+  border-bottom: none;
+}
+
+
+
+
+/* ---------- FOOTER BASE ---------- */
+.site-footer{
+  background: var(--color-principal);
+  color: var(--dark);
+  padding: 48px 20px 24px;
+  box-sizing: border-box;
+}
+
+/* contenedor centrado */
+.footer-inner{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  display: grid;
+      grid-template-columns: 400px 1fr 1fr;
+  gap: var(--gap);
+  align-items: start;
+}
+
+/* columna del logo */
+.logo-col .footer-logo {
+    display: block;
+    width: auto;
+    height: 10rem;
+    border-radius: 1.5rem;
+    margin-bottom: 1rem;
+    
+}
+.tagline{
+  color: white;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin: 0;
+  max-width: 220px;
+}
+
+/* encabezado contacto */
+.contact-col h4{
+  color: white;
+  margin: 0 0 1rem 0;
+  font-size: 1.3rem;
+  font-weight: 600;
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+}
+
+/* lista correos */
+.contact-list,
+.right-list{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li{
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.contact-list a{
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.contact-list a:hover{
+  color: var(--bright);
+  text-decoration: underline;
+}
+
+/* icon wrapper: usa color acento */
+.contact-list .icon{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent);
+  min-width: 20px;
+}
+.contact-list .icon img{
+  height: 2rem;
+  width: auto;
+}
+
+/* columna derecha (teléfonos y redes) */
+.right-col .right-item{
+  padding: 8px 0;
+  border-bottom: 1px solid rgba(255,255,255,0.03);
+}
+
+.right-col .label{
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+.right-col .value{
+  margin-top: 6px;
+  color: var(--bright);
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.right-col a{
+  color: var(--bright);
+  text-decoration: none;
+}
+
+.right-col a:hover{
+  text-decoration: underline;
+}
+
+/* separador y footer bottom */
+.footer-sep{
+  border: 0;
+  height: 0.7px;
+  background: var(--dark);
+  margin: 22px auto 18px;
+  max-width: var(--maxw);
+}
+
+.footer-bottom{
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 4px;
+  display:flex;
+  align-items:center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.footer-bottom .copyright{
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+}
+
+.footer-bottom a:hover{
+  border-bottom:1px solid var(--dark);
+}
+
+/* partner pequeño a la derecha */
+.partner-logo{
+  height: 36px;
+  object-fit: contain;
+  opacity: 0.95;
+}
+
+#img-celu{
+  display: none;
+}
+
+/*MAIN*/
+
+main{
+    background-color: var(--color-secundario);
+}
+
+h1,h2{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* WhatsApp bubble */
+.whatsapp {
+  cursor: pointer;
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  z-index: 80;
+}
+
+.whatsapp svg {
+  width: 28px;
+  height: 28px;
+  fill: #fff;
+}
+
+/* small helpers */
+.muted {
+  color: #6b7280;
+  font-size: 14px;
+}
+
+.hero{
+    width: 100%;
+    height: 30rem;
+      background-size: cover;
+     background-position: center;
+    background-image: url("../imagenes/heroimg.jpg");
+}
