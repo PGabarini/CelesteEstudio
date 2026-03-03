@@ -362,6 +362,7 @@ main{
 h1,h2{
     padding: 0;
     margin: 0;
+    color: white;
 }
 
 
@@ -398,7 +399,63 @@ h1,h2{
 .hero{
     width: 100%;
     height: 30rem;
-      background-size: cover;
-     background-position: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.imgHero{
+    width: auto;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
     background-image: url("../imagenes/heroimg.jpg");
+}
+
+#imgHero2{
+  background-image: url("../imagenes/heroimg2.jpg");
+}
+
+#imgHero3{
+  background-image: url("../imagenes/heroimg3.jpg");
+}
+
+.textHero{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  text-align: center;
+}
+
+/*EXPLICACION*/
+.explicacion{
+  padding-top: 5rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.textExplicacion{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 50%;
+}
+
+
+.ocupaciones{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.implicancia{
+  padding: 1rem;
+  margin: 1rem;
+  background-color: white;
+  border-radius: 2rem;
+  text-align: center;
 }
