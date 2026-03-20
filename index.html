@@ -1,46 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Celeste Estudio Web</title>
-    <link rel="stylesheet" href="css/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css" />
 </head>
 
 <body>
 <header class="main-header">
-    <div class="top-line" aria-hidden="true">
 
-      <div class="topGroup" id="groupRedes">
-        <span class="icon top" aria-hidden="true">
-           <img src="https://cdn-icons-png.flaticon.com/128/3670/3670274.png" alt="">
-         </span> 
+  
+  
 
-        <span class="icon top" aria-hidden="true">
-            <img src="https://cdn-icons-png.flaticon.com/128/1384/1384014.png" alt="">
-        </span>
-      </div>
-
-
-      <div class="topGroup">
-        <div>
-            <span class="icon top" aria-hidden="true">
-              <img src="https://cdn-icons-png.flaticon.com/128/455/455705.png" alt="queso">
-            </span>
-            <span>+54 9 2364 697969</span>
-        </div>
-
-        <div>
-            <span class="icon top" aria-hidden="true">
-              <img src="https://cdn-icons-png.flaticon.com/128/4314/4314565.png" alt="">
-            </span>
-            <span>consultas@celeste.com.ar</span>
-        </div>
-      </div>
-
-    </div>
     <div class="nav-row">
-        
+
       <div class="logo">
         <img src="imagenes/vemen-logo.png" alt="logo" >
         <a class="name-frase-company" href="index.html">
@@ -51,41 +26,82 @@
 
       <nav class="menu" role="navigation" aria-label="Main menu">
         <a id="inicio" href="index.html">Inicio</a>
-        <a id="productos" href="productos.html">¿Por que elegirnos?</a>
+        <a id="productos" href="productos.html">¿Por qué elegirnos?</a>
         <a href="contacto.html" id="contacto">Consultar gratis</a>
       </nav>
 
     </div>
+</header>
 
-  </header>
+<main>
+    <section class="hero" aria-label="Hero">
+      <div class="imgHero" role="img" aria-label="Imagen lateral izquierda"></div>
 
-    <main>
-        <section class="hero">
-          <div class="imgHero">
+      <div class="imgHero text" id="imgHero2">
+        <div class="textHero">
+          <h1>Diseño y desarrollo<br><span>de páginas web a medida</span></h1>
+        </div>
+      </div>
 
-          </div>
-          <div class="imgHero text" id="imgHero2"> 
-              <div class="textHero">
-                <h1>Disenio y desarrollo de Paginas Web a medida</h1>
-              </div>
-          </div>
-          <div class="imgHero" id="imgHero3">
+      <div class="imgHero" id="imgHero3" role="img" aria-label="Imagen lateral derecha"></div>
+    </section>
 
-          </div>
-        </section>
+    <section class="section-explicacion">
+      <div class="explicacion" aria-labelledby="servicios-titulo">
+        <div class="textExplicacion">
+          <h1 id="servicios-titulo">Nos encargamos de todo</h1>
+          <h2>Potencia tu negocio con tu propia página web</h2>
+          <a id="contacto" href="contacto.html" aria-label="Cotizar gratis">Cotizar gratis</a>
+        </div>
 
-        <section class="explicacion">
-          <div class="textExplicacion">
-            <h1> Nos encargamos de todo</h1>
-            <h2>Potencia tu negocio con tu propio pagina web</h2>
-            <a id="contacto">Cotizar gratis</a>
-          </div>
-          <div class="ocupaciones">
-            <p class="implicancia">Diseno</p>
-            <p class="implicancia">Desarrollo</p>
-            <p class="implicancia">Mantenimiento</p>
-          </div>
-        </section>
+        <div class="ocupaciones" aria-hidden="false">
+          <p class="implicancia">Diseño</p>
+          <p class="implicancia">Desarrollo</p>
+          <p class="implicancia">Mantenimiento</p>
+        </div>
+      </div>
+    </section>
+<section class="section-ejemplos">
+  <div class="carrousel-container">
+
+    <button class="btn-izq">
+      <img src="https://cdn-icons-png.flaticon.com/128/8050/8050812.png" alt="izquierda">
+    </button>
+
+    <div class="img-carrousel-izq"></div>
+    <div class="img-carrousel-main"></div>
+    <div class="img-carrousel-der"></div>
+
+    <button class="btn-der">
+      <img src="https://cdn-icons-png.flaticon.com/128/8050/8050813.png" alt="derecha">
+    </button>
+
+  </div>
+</section>
+
+<section class="section-webs">
+  <div class="webs-containers">
+    <div class="tiposWebs">
+      <button class="typeWeb">
+        Web personal
+      </button>
+      <button class="typeWeb">
+        Web Profesional
+      </button>
+      <button class="typeWeb">
+        Comercio
+      </button>
+      <button class="typeWeb">
+        Web personalizada
+      </button>
+    </div>
+
+    <div class="explicacionWeb">
+      
+    </div>
+
+  </div>
+</section>
 
     <a class="whatsapp" target="_blank" aria-label="WhatsApp" href="https://wa.me/5491160436584?text=Hola!%20Estuve%20visitando%20la%20pagina%20oficial%20de%20Vemen.%20Me%20gustar%C3%ADa%20hacer%20una%20consulta">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -93,7 +109,7 @@
         </svg>
     </a>
 
-    </main>
+</main>
 
 
 
