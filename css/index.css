@@ -473,7 +473,7 @@ main{ background: var(--color-secundario); }
   gap: 4rem;
   padding: 4rem;
   border-radius: 3rem;
-  background: linear-gradient(135deg, #1e88c8, #2ea3da);
+  background: linear-gradient(135deg, #1e88c8,white);
   box-shadow: 0 30px 60px rgba(0,0,0,0.15);
   position: relative;
   overflow: hidden;
@@ -555,20 +555,34 @@ main{ background: var(--color-secundario); }
 }
 
 .card{
-  position: relative;
+
+  overflow: hidden;
+  animation: fadeUp 0.8s ease both;
+
+  
+    position: relative;
   display:flex;
   align-items:center;
   gap:1.2rem;
-  padding:1.3rem 1.5rem;
+  padding:1.3rem 1.6rem;
   border-radius:1.6rem;
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255,255,255,0.6);
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  overflow: hidden;
-  transition: all .35s cubic-bezier(.22,1,.36,1);
-  animation: fadeUp 0.8s ease both;
+
+  /* 🔥 nuevo look */
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(14px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  box-shadow: 
+    0 10px 30px rgba(0,0,0,0.12),
+    inset 0 1px 0 rgba(255,255,255,0.25);
+
+  transition: all .4s cubic-bezier(.22,1,.36,1);
+
+  /* ✨ animación sutil constante */
+  animation: cardGlow 6s ease-in-out infinite;
 }
+
 
 /* línea animada lateral */
 .card::before{
