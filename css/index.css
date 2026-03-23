@@ -222,12 +222,16 @@ main{ background: var(--color-secundario); }
 .imgHero.text .textHero{
   position: absolute;
   inset: 0;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   pointer-events: none;
+  z-index: 2;
+  padding: 0 1.25rem;
 }
 
+/* overlay, same idea as before */
 .imgHero.text::before{
   content: "";
   position: absolute;
@@ -235,17 +239,45 @@ main{ background: var(--color-secundario); }
   background: linear-gradient(90deg, rgba(15,23,32,0.62) 0%, rgba(15,23,32,0.18) 45%, rgba(15,23,32,0.62) 100%);
   mix-blend-mode: multiply;
 }
+
+.hero-kicker{
+  margin: 0 0 14px 0;
+  padding: 0.4rem 0.85rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: rgba(255,255,255,0.88);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  backdrop-filter: blur(8px);
+}
+
 .textHero h1{
   color: #fff;
   font-weight: 800;
   margin: 0;
-  line-height: 1.03;
-  text-align:center;
+  line-height: 1.04;
+  text-align: center;
   text-shadow: 0 6px 24px rgba(0,0,0,0.45);
-  font-size: clamp(1.6rem, 3.8vw, 3.2rem);
-  letter-spacing: -0.6px;
-  padding: 0 1rem;
-  z-index: 2;
+  font-size: clamp(1.75rem, 3.6vw, 3.5rem);
+  letter-spacing: -0.9px;
+  max-width: 14.5ch;
+  text-wrap: balance;
+}
+
+.textHero h1 span{
+  display: block;
+  margin-top: 14px;
+  font-size: 0.42em;
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: rgba(255,255,255,0.84);
+  max-width: 32ch;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 
