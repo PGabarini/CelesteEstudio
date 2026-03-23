@@ -32,7 +32,10 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 header.main-header{
-  position: sticky;
+    position: fixed;
+
+  left: 0;
+
   top: 0;
   z-index: 60;
   width: 100%;
@@ -559,7 +562,7 @@ main{ background: var(--color-secundario); }
   overflow: hidden;
   animation: fadeUp 0.8s ease both;
 
-  
+
     position: relative;
   display:flex;
   align-items:center;
