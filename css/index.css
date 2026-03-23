@@ -459,7 +459,7 @@ main{ background: var(--color-secundario); }
 /* EXPLICACION */
 /* SECTION */
 .section-explicacion{
-  padding: 6rem 1.5rem;
+  padding: 6rem 1rem;
   display: flex;
   justify-content: center;
   background: linear-gradient(180deg, #d9e6f2, #c7d9ea);
@@ -467,7 +467,7 @@ main{ background: var(--color-secundario); }
 
 /* CONTAINER */
 .explicacion{
-  width: min(1200px, 100%);
+  width: 95%;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 4rem;
