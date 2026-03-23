@@ -545,6 +545,15 @@ main{ background: var(--color-secundario); }
 
 /* RIGHT */
 /* CARDS CON EFECTO PREMIUM */
+
+.cards{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+
 .card{
   position: relative;
   display:flex;
