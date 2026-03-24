@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/index.css" />
     <link rel="icon" href="https://cdn-icons-png.flaticon.com/128/13718/13718808.png">
+    <script src="js/app.js"></script>
 </head>
 
 <body>
@@ -100,20 +101,49 @@
 
 
 <section class="section-ejemplos">
-  <div class="carrousel-container">
+  <div class="carousel-wrapper" aria-label="Carrusel de ejemplos">
 
-    <button class="btn-izq">
-      <img src="https://cdn-icons-png.flaticon.com/128/8050/8050812.png" alt="izquierda">
-    </button>
+    <div class="carousel-header">
+      <div class="carousel-copy">
+        <span class="eyebrow">Ejemplos de trabajos</span>
+        <h2>Diseños que se sienten modernos y profesionales</h2>
+      </div>
+<!-- 
+      <div class="carousel-actions">
+        <button class="carousel-btn" id="prevBtn" type="button" aria-label="Anterior">
+          <img src="https://cdn-icons-png.flaticon.com/128/8050/8050812.png" alt="">
+        </button>
+        <button class="carousel-btn" id="nextBtn" type="button" aria-label="Siguiente">
+          <img src="https://cdn-icons-png.flaticon.com/128/8050/8050813.png" alt="">
+        </button>
+      </div>-->
+    </div>
 
-    <div class="img-carrousel-izq"></div>
-    <div class="img-carrousel-main"></div>
-    <div class="img-carrousel-der"></div>
+    <div class="carousel-stage" id="carouselStage">
+      <button class="slide slide-prev" type="button" aria-label="Proyecto anterior">
+        <div class="slide-info">
+          <span class="slide-kicker">01</span>
+          <h3></h3>
+          <p></p>
+        </div>
+      </button>
 
-    <button class="btn-der">
-      <img src="https://cdn-icons-png.flaticon.com/128/8050/8050813.png" alt="derecha">
-    </button>
+      <button class="slide slide-active" type="button" aria-label="Proyecto principal">
+        <div class="slide-info">
+          <span class="slide-kicker">02</span>
+          <h3></h3>
+          <p></p>
+        </div>
+      </button>
 
+      <button class="slide slide-next" type="button" aria-label="Siguiente proyecto">
+        <div class="slide-info">
+          <span class="slide-kicker">03</span>
+          <h3></h3>
+          <p></p>
+        </div>
+      </button>
+    </div>
   </div>
 </section>
 
