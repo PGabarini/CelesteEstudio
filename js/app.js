@@ -77,9 +77,12 @@ document.addEventListener("DOMContentLoaded", () => {
     render();
   }
 
-  slides.forEach((slide) => {
-    slide.addEventListener("click", nextSlide);
+slides.forEach((slide) => {
+  slide.addEventListener("click", (e) => {
+    if (e.target.closest(".slide-arrow")) return;
+    nextSlide();
   });
+});
 
   nextBtn.addEventListener("click", nextSlide);
   prevBtn.addEventListener("click", prevSlide);

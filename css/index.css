@@ -888,6 +888,64 @@ main{ background: var(--color-secundario); }
   animation: slidePop 1s ease;
 }
 
+
+/* FLECHAS DENTRO DE SLIDES */
+.slide-arrow{
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255,255,255,0.15);
+  backdrop-filter: blur(10px);
+
+  border: 1px solid rgba(255,255,255,0.25);
+
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+
+  cursor: pointer;
+  z-index: 5;
+
+  transition: all .3s ease;
+}
+
+/* posiciones */
+.slide-arrow.left{ left: 16px; }
+.slide-arrow.right{ right: 16px; }
+
+/* iconos */
+.slide-arrow img{
+  width: 26px;
+  height: 26px;
+  filter: brightness(0) invert(1);
+}
+
+/* hover PRO */
+.slide-arrow:hover{
+  transform: translateY(-50%) scale(1.1);
+  background: rgba(255,255,255,0.3);
+  box-shadow: 0 14px 30px rgba(0,0,0,0.25);
+}
+
+/* animación sutil */
+.slide-prev .slide-arrow{
+  opacity: 0.8;
+}
+.slide-next .slide-arrow{
+  opacity: 0.8;
+}
+
+.slide:hover .slide-arrow{
+  opacity: 1;
+}
+
+
 @keyframes slidePop{
   0%{ transform: scale(.98); }
   55%{ transform: scale(1.03); }
