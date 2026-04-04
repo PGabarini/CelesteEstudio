@@ -436,31 +436,29 @@ main{
   object-fit: contain;
   opacity: 0.95;
 }
-
-/*Explicacion */
 .section-diagram {
-  padding: 1rem 0rem;
+  padding: 4rem 0rem;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
-  /* Fondo de la página para que resalte el banner */
+
 }
 
 .banner-container {
   width: 100%;
-  background: linear-gradient(to bottom, var(--color-principal), #fcfefe); /* Degradado del banner */
-  padding: 3rem 4rem;
+  background:var(--color-principal);
+  padding: 1rem 4rem;
   box-shadow: 0 10px 40px rgba(0,0,0,0.1);
   position: relative;
   overflow: hidden;
 }
 
-
-
 .content-wrapper {
   text-align: center;
   margin-bottom: 3rem;
+  position: relative;
+  z-index: 2;
 }
 
 .eyebrow {
@@ -489,89 +487,175 @@ main{
   margin: 0 auto;
 }
 
-.flow-diagram {
+/* === NUEVO CSS DE LAS TARJETAS === */
+.ui-cards-container {
   display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
-}
-
-.flow-step {
-  flex: 1;
-  background: rgba(255, 255, 255, 0.3); /* Fondo translúcido */
-  backdrop-filter: blur(10px); /* Efecto de desenfoque de fondo */
-  border: 1px solid rgba(255, 255, 255, 0.4); /* Borde sutil */
-  border-radius: 1rem;
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-  transition: transform 0.3s ease;
-  position: relative;
-  z-index: 1;
-}
-
-.flow-step:hover {
-  transform: translateY(-5px);
-  z-index: 2; /* Elevar al hacer hover para ver el borde completo */
-}
-
-.step-num {
-  flex-shrink: 0;
-  width: 3rem;
-  height: 3rem;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #1d88c9, #0e5e93); /* Degradado del círculo */
-  color: white;
-  display: flex;
-  justify-content: center;
+  justify-content: space-around;
   align-items: center;
-  font-weight: 800;
-  font-size: 1.1rem;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+  gap: 2rem;
+  margin-bottom: 3.5rem;
+  position: relative;
+  z-index: 2;
 }
 
-.step-details h3 {
-  font-size: 1.1rem;
-  color: #0d233e;
-  font-weight: 700;
-  margin: 0 0 0.3rem 0;
+.ui-card {
+  background: #ffffff;
+  border-radius: 1.2rem;
+  width: 250px;
+  height: 260px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+  cursor: pointer;
 }
 
-.step-details p {
-  font-size: 0.9rem;
-  color: #0d233e;
+/* Efecto hover: la tarjeta crece y la sombra se acentúa */
+.ui-card:hover, .ui-card.active {
+  transform: scale(1.08);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  z-index: 10;
+}
+
+.card-top-content {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  background: #ffffff;
+}
+
+.card-icon {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 1rem;
+}
+
+.ui-card h3 {
+  font-size: 1.3rem;
+  color: #333;
+  font-weight: 500;
   margin: 0;
-  opacity: 0.8;
 }
 
-/* --- Forma de flecha con clip-path y solapamiento --- */
-.arrow-shape {
-  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%, 10% 50%);
-  border-radius: 0; /* clip-path ignora border-radius */
-  padding-right: 3rem; /* Espacio para la punta de la flecha */
-  padding-left: 3rem; /* Espacio para la entrada cóncava */
+/* El bloque de color en la parte inferior */
+.card-color-bg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45%; /* Altura normal */
+  transition: height 0.4s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2.5rem 1.5rem 1.5rem;
 }
 
-/* Solapamiento de flechas */
-.flow-diagram .flow-step:not(:first-child) {
-  margin-left: -2.5rem;
+/* Al pasar el mouse, el color sube */
+.ui-card:hover .card-color-bg, .ui-card.active .card-color-bg {
+  height: 65%;
 }
 
-/* Ajustes específicos para el primer y último paso para cerrar el flujo */
-.flow-diagram .flow-step:first-child {
-  clip-path: polygon(0% 0%, 90% 0%, 100% 50%, 90% 100%, 0% 100%);
-  padding-left: 2rem;
+/* Las "olas" usando SVG inline como background-image (súper optimizado y sin imágenes externas) */
+.card-color-bg::before {
+  content: '';
+  position: absolute;
+  top: -24px; 
+  left: 0; 
+  width: 100%; 
+  height: 25px;
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
 }
 
-.flow-diagram .flow-step:last-child {
-  clip-path: polygon(10% 0%, 100% 0%, 100% 100%, 10% 100%, 0% 50%);
-  padding-right: 2rem;
+/* Tema Celeste/Verde Agua (Diseño) */
+.bg-teal {
+  background: linear-gradient(180deg, #08cdcc, #14d59a);
+}
+.bg-teal::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M0,10 C30,20 70,0 100,10 L100,20 L0,20 Z' fill='%2308cdcc'/></svg>");
 }
 
+/* Tema Naranja (Desarrollo) */
+.bg-orange {
+  background: linear-gradient(180deg, #fc7b54, #fdbb62);
+}
+.bg-orange::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M0,15 C30,0 70,0 100,15 L100,20 L0,20 Z' fill='%23fc7b54'/></svg>");
+}
+
+/* Tema Violeta (Mantenimiento) */
+.bg-purple {
+  background: linear-gradient(180deg, #b07bd4, #db96db);
+}
+.bg-purple::before {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M0,5 C30,15 70,10 100,20 L0,20 Z' fill='%23b07bd4'/></svg>");
+}
+
+/* Comportamiento del texto (Tags vs Párrafo) */
+.card-tags {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: absolute;
+  top: 35%;
+  transition: opacity 0.3s, transform 0.3s;
+}
+
+.tag-line {
+  width: 25px;
+  height: 1px;
+  background: rgba(255,255,255,0.6);
+  display: inline-block;
+}
+
+.card-details {
+  opacity: 0;
+  transform: translateY(20px);
+  position: absolute;
+  top: 15%;
+  width: 85%;
+  text-align: center;
+  color: white;
+  transition: all 0.4s ease;
+  pointer-events: none;
+}
+
+.card-details p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin-bottom: 1rem;
+}
+
+.card-arrow {
+  font-size: 1.2rem;
+}
+
+/* Animaciones de cambio de estado interno */
+.ui-card:hover .card-tags, .ui-card.active .card-tags {
+  opacity: 0;
+  transform: translateY(-20px);
+  pointer-events: none;
+}
+
+.ui-card:hover .card-details, .ui-card.active .card-details {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* --- BOTONES Y RESPONSIVE (IGUALES QUE ANTES) --- */
 .button-wrapper {
   text-align: center;
+  position: relative;
+  z-index: 2;
 }
 
 .btn {
@@ -594,7 +678,6 @@ main{
   box-shadow: 0 8px 25px rgba(0,0,0,0.3);
 }
 
-/* --- WhatsApp Float --- */
 .whatsapp-float {
   position: absolute;
   bottom: 1.5rem;
@@ -620,19 +703,14 @@ main{
   height: 60%;
 }
 
-/* --- Responsive --- */
 @media (max-width: 900px) {
-  .flow-diagram {
+  .ui-cards-container {
     flex-direction: column;
-    gap: 1.5rem;
+    gap: 3rem;
   }
   
-  .flow-diagram .flow-step {
-    width: 100%;
-    clip-path: none; /* Eliminar forma de flecha en móvil */
-    border-radius: 1rem;
-    padding: 1.5rem;
-    margin-left: 0 !important; /* Eliminar solapamiento */
+  .ui-card {
+    width: 280px;
   }
 }
 
