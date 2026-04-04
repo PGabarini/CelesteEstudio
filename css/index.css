@@ -173,7 +173,9 @@ header.main-header{
 }
 
 /* Main background */
-main{ background: var(--color-secundario); }
+main{ 
+  background: linear-gradient(180deg, #d9e6f2, #c7d9ea);
+}
 
 /* WhatsApp bubble */
 .whatsapp{
@@ -443,7 +445,7 @@ main{ background: var(--color-secundario); }
   padding: 6rem 1rem;
   display: flex;
   justify-content: center;
-  background: linear-gradient(180deg, #d9e6f2, #c7d9ea);
+  
 }
 
 /* CONTAINER */
@@ -671,7 +673,7 @@ main{ background: var(--color-secundario); }
   display:flex;
   justify-content:center;
   padding: clamp(4rem, 6vw, 6rem) 1.25rem;
-  background: linear-gradient(180deg, #d9e6f2, #c7d9ea);
+ 
 }
 
 .carousel-wrapper{
