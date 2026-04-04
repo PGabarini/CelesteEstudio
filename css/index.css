@@ -436,6 +436,8 @@ main{
   object-fit: contain;
   opacity: 0.95;
 }
+
+/*SECCION EXPLICACION*/
 .section-diagram {
   padding: 4rem 0rem;
   display: flex;
@@ -501,7 +503,7 @@ main{
 .ui-card {
   background: #ffffff;
   border-radius: 1.2rem;
-  width: 250px;
+  width: 400px;
   height: 260px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.08);
   position: relative;
