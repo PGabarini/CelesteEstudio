@@ -570,6 +570,7 @@ header.main-header {
 .services-header {
   text-align: center;
   padding: 2rem;
+
 }
 
 .services-header .eyebrow {
@@ -624,23 +625,31 @@ header.main-header {
   text-align: left;
   box-shadow: 0 15px 35px rgba(19, 57, 81, 0.08); /* Sombra unificada */
 }
-
+/*
+NUEVO LAYOUT DE CARDS (GRID)
+   ========================================= */
 .p-card-content {
   position: relative;
   z-index: 10;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  /* Creamos 2 columnas: la 1ra se ajusta al icono, la 2da toma el resto */
+  grid-template-columns: auto 1fr; 
+  /* Creamos 3 filas: Icono/Titulo, Párrafo, Enlace */
+  grid-template-rows: auto 1fr auto; 
+  column-gap: 1.2rem; /* Espacio horizontal entre icono y título */
   height: 100%;
 }
 
 .p-card-icon {
+  grid-column: 1; /* Columna 1 */
+  grid-row: 1;    /* Fila 1 */
   width: 56px;
   height: 56px;
   border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
   transition: transform 0.4s ease, background 0.4s ease, color 0.4s ease;
 }
 
@@ -650,20 +659,28 @@ header.main-header {
 }
 
 .p-card h3 {
+  grid-column: 2; /* Columna 2 */
+  grid-row: 1;    /* Fila 1 (misma que el icono) */
+  align-self: center; /* Lo centramos verticalmente con el icono */
   font-size: 1.75rem;
   font-weight: 800;
-  margin: 0 0 1rem 0;
+  margin: 0 0 1.5rem 0; /* Alineamos el margen con el del icono */
   letter-spacing: -0.5px;
 }
 
 .p-card p {
+  grid-column: 1 / -1; /* Ocupa todas las columnas desde la 1 hasta el final */
+  grid-row: 2;         /* Fila 2 */
+  align-self: start;   /* Se tira hacia arriba */
   font-size: 0.95rem;
   line-height: 1.6;
   margin: 0 0 2rem 0;
-  flex-grow: 1;
 }
 
 .p-card-link {
+  grid-column: 1 / -1; /* Ocupa todas las columnas */
+  grid-row: 3;         /* Fila 3 */
+  align-self: end;     /* Se tira hacia abajo, empujado por el 1fr del párrafo */
   text-decoration: none;
   font-weight: 600;
   font-size: 0.95rem;
