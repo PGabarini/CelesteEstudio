@@ -492,203 +492,350 @@ main{
   max-width: 700px;
   margin: 0 auto;
 }
+/* === SECTION HEADER === */
+.premium-services-section {
 
-/* === CSS DE LAS TARJETAS === */
-.ui-cards-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 3.5rem;
-  position: relative;
-  z-index: 2;
+  background:  linear-gradient(180deg, var(--color-principal), white);
 }
 
-.ui-card {
-  background: #ffffff;
-  border-radius: 1.2rem;
-  width: 400px;
-  height: 260px;
-  box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-  position: relative;
-  overflow: hidden;
-  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
-  cursor: pointer;
+.services-header {
+  text-align: center;
+  margin-bottom: 4rem;
 }
 
-.ui-card:hover, .ui-card.active {
-  transform: scale(1.08);
-  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-  z-index: 10;
-}
-
-.card-top-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 2.5rem;
-  background: #ffffff;
-}
-
-.card-icon {
-  width: 45px;
-  height: 45px;
-  margin-bottom: 1rem;
-}
-
-.ui-card h3 {
-  font-size: 1.4rem;
-  color: #0d233e; /* Azul marino para los títulos de las cards */
+.services-header .eyebrow {
+  display: inline-block;
+  font-size: 0.8rem;
   font-weight: 700;
-  margin: 0;
+  letter-spacing: 2px;
+  color: #3b82f6;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
 }
 
-.card-color-bg {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 45%; 
-  transition: height 0.4s ease;
+.services-header h2 {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  color: #0f172a;
+  letter-spacing: -1px;
+}
+
+.services-header p {
+  font-size: 1.1rem;
+  color: #64748b;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.6;
+}
+
+/* === GRID LAYOUT === */
+.services-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  align-items: stretch;
+  padding: 2rem;
+}
+
+/* === BASE CARD STYLES === */
+.p-card {
+  position: relative;
+  border-radius: 24px;
+  padding: 3rem 2.5rem;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+  z-index: 1;
+  text-align: left;
+}
+
+.p-card-content {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.p-card-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  display: flex;
   align-items: center;
-  padding: 2.5rem 1.5rem 1.5rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+  transition: var(--transition-smooth);
 }
 
-.ui-card:hover .card-color-bg, .ui-card.active .card-color-bg {
-  height: 65%;
+.p-card-icon svg {
+  width: 28px;
+  height: 28px;
 }
 
-.card-color-bg::before {
-  content: '';
-  position: absolute;
-  top: -24px; 
-  left: 0; 
-  width: 100%; 
-  height: 25px;
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
+.p-card-category {
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
+  display: block;
 }
 
-/* --- NUEVA PALETA DE COLORES (AZULES) --- */
-
-/* Tarjeta 1: Azul Claro (Diseño) */
-.bg-blue-light {
-  background: linear-gradient(180deg, #4da1ff, #1e78eb);
-}
-.bg-blue-light::before {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M0,10 C30,20 70,0 100,10 L100,20 L0,20 Z' fill='%234da1ff'/></svg>");
+.p-card h3 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.5px;
 }
 
-/* Tarjeta 2: Azul Marino / Dark (Desarrollo - Principal) */
-.bg-blue-dark {
-  background: linear-gradient(180deg, #1b3a5f, #0d233e);
-}
-.bg-blue-dark::before {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M0,15 C30,0 70,0 100,15 L100,20 L0,20 Z' fill='%231b3a5f'/></svg>");
-}
-
-/* Tarjeta 3: Azul Pizarra / Muted (Mantenimiento) */
-.bg-blue-muted {
-  background: linear-gradient(180deg, #8ba6c1, #5c7c99);
-}
-.bg-blue-muted::before {
-  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 20' preserveAspectRatio='none'><path d='M0,5 C30,15 70,10 100,20 L0,20 Z' fill='%238ba6c1'/></svg>");
+.p-card p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin: 0 0 2rem 0;
+  flex-grow: 1;
 }
 
-/* --- TEXTOS INTERNOS --- */
-.card-tags {
+.p-card-link {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: #fff;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 1px;
+  transition: var(--transition-fast);
+  width: fit-content;
+}
+
+.p-card-link .arrow {
+  transition: transform 0.3s ease;
+}
+
+.p-card:hover .p-card-link .arrow {
+  transform: translateX(5px);
+}
+
+
+/* === CARD 1: ORGANIC & MINIMALIST === */
+.card-organic {
+  background: #ffffff;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid rgba(226, 232, 240, 0.6);
+  margin: 0;
+}
+
+.card-organic:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+}
+
+.card-organic .card-decor-bottom {
   position: absolute;
-  top: 35%;
-  transition: opacity 0.3s, transform 0.3s;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: 0;
+  transform-origin: bottom;
+  transition: transform 0.6s ease;
 }
 
-.tag-line {
-  width: 25px;
-  height: 1px;
-  background: rgba(255,255,255,0.6);
-  display: inline-block;
+.card-organic .card-decor-bottom svg {
+  display: block;
+  width: 100%;
+  height: 120px;
 }
 
-.card-details {
-  opacity: 0;
-  transform: translateY(20px);
+.card-organic:hover .card-decor-bottom {
+  transform: scaleY(1.3);
+}
+
+.card-organic .icon-blue {
+  background: #eff6ff;
+  color: #2563eb;
+}
+
+.card-organic:hover .icon-blue {
+  background: #2563eb;
+  color: #ffffff;
+  transform: scale(1.05) rotate(-5deg);
+}
+
+.card-organic .p-card-category { color: #64748b; }
+.card-organic h3 { color: #0f172a; }
+.card-organic p { color: #475569; }
+.card-organic .p-card-link { color: #2563eb; }
+
+
+/* === CARD 2: TECH & CYBER (DARK) === */
+.card-tech {
+  background: #0f172a;
+  box-shadow: 0 15px 40px rgba(15, 23, 42, 0.2);
+  border: 1px solid #1e293b;
+}
+
+.card-tech:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 60px rgba(14, 165, 233, 0.15);
+  border-color: rgba(14, 165, 233, 0.3);
+}
+
+.card-tech .card-decor-top {
   position: absolute;
-  top: 15%;
-  width: 85%;
-  text-align: center;
-  color: white;
-  transition: all 0.4s ease;
-  pointer-events: none;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 200px;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 24px 24px 0 0;
 }
 
-.card-details p {
-  font-size: 0.95rem;
-  line-height: 1.4;
-  margin-bottom: 1rem;
+.card-tech .glow-orb {
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(14, 165, 233, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
+  border-radius: 50%;
+  transition: transform 0.6s ease;
 }
 
-.card-arrow {
-  font-size: 1.2rem;
+.card-tech .tech-grid {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 150px;
+  height: 150px;
+  opacity: 0.5;
+  transition: opacity 0.4s ease;
 }
 
-.ui-card:hover .card-tags, .ui-card.active .card-tags {
-  opacity: 0;
-  transform: translateY(-20px);
-  pointer-events: none;
+.card-tech:hover .glow-orb {
+  transform: scale(1.5);
 }
 
-.ui-card:hover .card-details, .ui-card.active .card-details {
+.card-tech:hover .tech-grid {
   opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
 }
 
-/* --- BOTONES Y RESPONSIVE --- */
-.button-wrapper {
-  text-align: center;
-  position: relative;
-  z-index: 2;
+.card-tech .icon-cyan {
+  background: rgba(14, 165, 233, 0.1);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.2);
 }
 
-.btn {
-  display: inline-block;
-  text-decoration: none;
-  border-radius: 2rem;
-  padding: 0.8rem 2.5rem;
-  font-weight: 700;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+.card-tech:hover .icon-cyan {
+  box-shadow: 0 0 20px rgba(14, 165, 233, 0.4);
 }
 
-.btn-primary {
-  background: #0d233e;
-  color: white;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+.card-tech .glow-text {
+  color: #38bdf8;
+  text-shadow: 0 0 10px rgba(56, 189, 248, 0.3);
 }
 
-.btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+.card-tech h3 { color: #f8fafc; }
+.card-tech p { color: #94a3b8; }
+.card-tech .p-card-link { color: #38bdf8; }
+.card-tech .p-card-link:hover { color: #7dd3fc; }
+
+
+/* === CARD 3: VIBRANT & GLASSMORPHISM === */
+.card-vibrant {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  box-shadow: 0 15px 40px rgba(99, 102, 241, 0.2);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-@media (max-width: 900px) {
-  .ui-cards-container {
-    flex-direction: column;
-    gap: 3rem;
+.card-vibrant:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(139, 92, 246, 0.4);
+}
+
+.card-vibrant .card-decor-glass {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+.card-vibrant .glass-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.card-vibrant .circle-1 {
+  width: 180px;
+  height: 180px;
+  bottom: -40px;
+  right: -40px;
+}
+
+.card-vibrant .circle-2 {
+  width: 100px;
+  height: 100px;
+  bottom: 80px;
+  right: -20px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.card-vibrant:hover .circle-1 {
+  transform: scale(1.2) translate(-10px, -10px);
+}
+
+.card-vibrant:hover .circle-2 {
+  transform: scale(1.5) translate(-20px, 20px);
+}
+
+.card-vibrant .icon-glass {
+  background: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.card-vibrant:hover .icon-glass {
+  background: rgba(255, 255, 255, 0.3);
+  transform: rotate(10deg);
+}
+
+.card-vibrant .p-card-category { color: rgba(255, 255, 255, 0.8); }
+.card-vibrant h3 { color: #ffffff; }
+.card-vibrant p { color: rgba(255, 255, 255, 0.9); }
+.card-vibrant .p-card-link { color: #ffffff; }
+.card-vibrant .p-card-link:hover { color: rgba(255, 255, 255, 0.8); }
+
+
+/* === RESPONSIVE MEDIA QUERIES === */
+@media (max-width: 992px) {
+  .services-header h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .premium-services-section {
+    padding: 3rem 1.5rem;
   }
   
-  .ui-card {
-    width: 280px;
+  .p-card {
+    padding: 2.5rem 2rem;
   }
 }
 /*SECCION Ejemplo*/
