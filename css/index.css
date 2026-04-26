@@ -569,7 +569,7 @@ header.main-header {
 
 .services-header {
   text-align: center;
-  margin-bottom: 4rem;
+  padding: 2rem;
 }
 
 .services-header .eyebrow {
@@ -608,7 +608,6 @@ header.main-header {
   gap: 2.5rem;
   align-items: stretch;
   padding: 2rem;
-  max-width: var(--maxw);
   margin: 0 auto;
 }
 
